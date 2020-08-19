@@ -2,9 +2,10 @@ const express = require("express")
 const dotenv = require("dotenv")
 const passport = require('passport')
 const session = require('express-session')
-const cors =require('cors')
 const morgan = require("morgan")
 const connectDB = require("./config/db")
+
+const app = express()
 
 // Load config
 dotenv.config({ path: './config/config.env' })
@@ -14,9 +15,8 @@ require('./config/passport')(passport)
 
 connectDB()
 
-const app = express()
-
 // Enable CORS
+const cors = require('cors')
 app.use(cors())
 
 // Sessions

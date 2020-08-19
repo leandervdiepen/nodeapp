@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 import store from './store'
 import bulma from './assets/sass/bulma.scss'
+import Axios from 'axios'
+
+Vue.prototype.$http = Axios
 
 Vue.use(bulma)
 
